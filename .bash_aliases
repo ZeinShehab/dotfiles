@@ -33,6 +33,22 @@ run() {
   setsid "$@" < /dev/null > /dev/null 2>&1
 }
 
+venv() {
+    local env_name=$1
+    if [[ -z "$env_name" ]]; then
+        echo "Usage: activate_env <environment_name>"
+        return 1
+    fi
+
+    local env_path="$HOME/.venvs/$env_name/bin/activate"
+    if [[ -f "$env_path" ]]; then
+        source "$env_path"
+    else
+        echo "Environment '$env_name' not found in ~/.venvs"
+        return 1
+    fi
+}
+
 alias updt='sudo sh -c "apt-get update; apt-get -y dist-upgrade"'
 export PATH=/usr/local/cuda-12.6/bin${PATH:+:${PATH}}
 alias python=python3

@@ -33,7 +33,7 @@ command_timeout = 5000
 show_always = true
 style_user = "bg:#3B4252"
 style_root = "bg:#3B4252"
-format = '[$user ]($style)'
+format = '[ ]($style)'
 
 [directory]
 style = "bg:#434C5E"
@@ -48,6 +48,7 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+#"dev" = "\uf489 "
 # Keep in mind that the order matters. For example:
 # "Important Documents" = "  "
 # will not be replaced, because "Documents" was already substituted before.
@@ -114,8 +115,9 @@ style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
 
 [python]
+symbol = "\ue73c"
 style = "bg:#3B4252"
-format = '[(\($virtualenv\) )]($style)'
+format = '[$symbol (\($virtualenv\) )]($style)'
 
 [rust]
 symbol = ""
@@ -123,7 +125,7 @@ style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
 
 [time]
-disabled = false
+disabled = true
 time_format = "%R" # Hour:Minute Format
 style = "bg:#33658A"
 format = '[ $time ]($style)'
