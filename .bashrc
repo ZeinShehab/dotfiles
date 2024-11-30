@@ -217,7 +217,7 @@ ftext() {
 	# -n causes line number to be printed
 	# optional: -F treat search term as a literal, not a regular expression
 	# optional: -l only print filenames and not the matching lines ex. grep -irl "$1" *
-	grep -iIHrn --color=always "$1" . | less -r
+	grep -iIHrn --color=always "$1" .
 }
 
 # Goes up a specified number of directories  (i.e. up 4)
