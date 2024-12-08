@@ -57,8 +57,8 @@ colored_titlebar:                                   true   # Windows 11+ only
 dark_titlebar:                                      false  # Windows only
 hide_mouse_when_typing:                             false
 draw_indent_guides:                                 true
-auto_surround_with_brackets_and_quotes:             false
-auto_close_brackets:                                false
+auto_surround_with_brackets_and_quotes:             true
+auto_close_brackets:                                true
 prefer_system_file_dialogs:                         false  # Windows only
 show_cursors_off_screen:                            true
 persist_local_search_results:                       false  # if true, search results will stay highlighted and you have to dismiss them using the `escape` action
@@ -321,7 +321,7 @@ F11                         toggle_fullscreen
 {Shift}-Ctrl-Backspace      delete_word_left
 {Shift}-Ctrl-Delete         delete_word_right
 
-Ctrl-Plus                   increase_font_size
+Ctrl-=                   increase_font_size
 Ctrl-Minus                  decrease_font_size
 Ctrl-0                      reset_font_size_to_default
 Ctrl-MouseMiddle            reset_font_size_to_default
@@ -335,7 +335,7 @@ Shift-Ctrl-F8               go_to_previous_build_error_on_the_side
 [[style]]
 
 [fonts]
-font:       default
+font:       FiraCode
 font_size:  14
 
 [colors]
