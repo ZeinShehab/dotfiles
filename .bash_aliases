@@ -49,6 +49,28 @@ venv() {
     fi
 }
 
+upload() {
+    local file_name=$1
+    if [[ -z "$file_name" ]]; then
+        echo "Usage: to_server <file_to_upload_name>"
+        return 1
+    fi
+
+    local scp_path="house:/home/ubuntu/shared/$file_name"
+    scp "$file_name" "$scp_path"
+}
+
+download() {
+    local file_name=$1
+    if [[ -z "$file_name" ]]; then
+        echo "Usage: from_server <file_to_download_name>"
+        return 1
+    fi
+
+    local scp_path="house:/home/ubuntu/shared/$file_name"
+    scp "$scp_path" "$file_name"
+}
+
 alias updt='sudo sh -c "apt-get update; apt-get -y dist-upgrade"'
 export PATH=/usr/local/cuda-12.6/bin${PATH:+:${PATH}}
 alias python=python3
